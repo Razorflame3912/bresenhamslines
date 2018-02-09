@@ -25,7 +25,7 @@ void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
   ynow = y0;
   //printf("%d ",d);
 
-  if(y1 - y0 > 0 && abs(a) < abs(b)){
+  if(y1 - y0 >= 0 && abs(a) <= abs(b)){
     //printf("octet 1 code \n");
      while(xnow <= x1){
       plot(s,c,xnow,ynow);
@@ -40,7 +40,7 @@ void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
      }
   }
 
-  else if(y1 - y0 > 0 && abs(b) < abs(a)){
+  else if(y1 - y0 >= 0 && abs(b) <= abs(a)){
     //printf("octet 2 code \n");
     while(ynow <= y1){
       plot(s,c,xnow,ynow);
@@ -55,7 +55,7 @@ void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
     }
   }
 
-  else if(y1 - y0 < 0 && abs(b) < abs(a)){
+  else if(y1 - y0 <= 0 && abs(b) <= abs(a)){
     //printf("octet 7 code \n");
     while(ynow >= y1){
       plot(s,c,xnow,ynow);
