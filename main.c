@@ -17,13 +17,31 @@ int main() {
 
   clear_screen(s);
 
-  draw_line(250,250,400,200,s,c);
-  //draw_line(250,250,500,200,s,c);
-  //draw_line(250,250,255,100,s,c);
-  plot(s,c,10,10);
-  plot(s,c,20,20);
-  plot(s,c,30,30);
-  plot(s,c,40,40);
+
+  int x,y;
+  int dir;
+
+  x = 0;
+  y = 500;
+  dir = -1;
+  
+ 
+
+  while(y > 0){
+    while(x+40<500){
+      draw_line(x,y,40+x,y+(50*dir),s,c);
+      x += 40;
+      y += (50*dir);
+      dir *= -1;
+    }
+    if(dir<0){
+      y -= 60;
+    }
+    x = 0;
+    dir *= -1;
+    }
+
+  
   display(s);
   save_extension(s, "lines.png");
 }
